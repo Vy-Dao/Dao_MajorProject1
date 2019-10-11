@@ -721,22 +721,22 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button disable="true" mnemonicParsing="false" text="Submit">
+            <Button fx:id="btnSubmit" disable="true" mnemonicParsing="false" onAction="#btnActionHandel" text="Submit">
                <GridPane.margin>
                   <Insets left="88.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Print Inventory" GridPane.columnIndex="1">
+            <Button fx:id="btnPrintInv" mnemonicParsing="false" onAction="#btnActionHandel" text="Print Inventory" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="68.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Print Inventorry Table" GridPane.columnIndex="2">
+            <Button fx:id="btnPrintInvTable" mnemonicParsing="false" onAction="#btnActionHandel" text="Print Inventorry Table" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets left="50.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Clear" GridPane.columnIndex="3">
+            <Button fx:id="btnClear" mnemonicParsing="false" onAction="#btnActionHandel" text="Clear" GridPane.columnIndex="3">
                <GridPane.margin>
                   <Insets left="93.0" />
                </GridPane.margin>
