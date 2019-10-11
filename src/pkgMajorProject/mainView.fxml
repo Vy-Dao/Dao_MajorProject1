@@ -11,6 +11,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -53,43 +54,43 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Apple">
+                              <CheckBox fx:id="chkApple" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Apple">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Banana" GridPane.rowIndex="1">
+                              <CheckBox fx:id="chkBanana" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Banana" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Cherrie" GridPane.rowIndex="2">
+                              <CheckBox fx:id="chkCherie" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Cherie" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Coconut" GridPane.rowIndex="3">
+                              <CheckBox fx:id="chkCoconut" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Coconut" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Grape" GridPane.rowIndex="4">
+                              <CheckBox fx:id="chkGrape" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Grape" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Orange" GridPane.rowIndex="5">
+                              <CheckBox fx:id="chkOrange" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Orange" GridPane.rowIndex="5">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Watermelon" GridPane.rowIndex="6">
+                              <CheckBox fx:id="chkWatermelon" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Watermelon" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Peache" GridPane.rowIndex="7">
+                              <CheckBox fx:id="chkPeach" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Peache" GridPane.rowIndex="7">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Pineapple" GridPane.rowIndex="8">
+                              <CheckBox fx:id="chkPineapple" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Pineapple" GridPane.rowIndex="8">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Kiwifruit" GridPane.rowIndex="9">
+                              <CheckBox fx:id="chkKiwi" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Kiwifruit" GridPane.rowIndex="9">
                                  <font>
                                     <Font size="14.0" />
                                  </font></CheckBox>
@@ -162,52 +163,52 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox prefWidth="100.0">
+                              <ChoiceBox fx:id="chbApple" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbOrange" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbBanana" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbCherie" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbCoconut" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbGrape" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="6">
+                              <ChoiceBox fx:id="chbWatermelon" prefWidth="100.0" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="7">
+                              <ChoiceBox fx:id="chbPeach" prefWidth="100.0" GridPane.rowIndex="7">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="8">
+                              <ChoiceBox fx:id="chbPineapple" prefWidth="100.0" GridPane.rowIndex="8">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="9">
+                              <ChoiceBox fx:id="chbKiwi" prefWidth="100.0" GridPane.rowIndex="9">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -238,52 +239,52 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Broccoli">
+                              <CheckBox fx:id="chkBroccoli" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Broccoli">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Carrot" GridPane.rowIndex="1">
+                              <CheckBox fx:id="chkCarrot" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Carrot" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Asparagus" GridPane.rowIndex="2">
+                              <CheckBox fx:id="chkAsparagus" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Asparagus" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Beans, Green" GridPane.rowIndex="3">
+                              <CheckBox fx:id="chkBean" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Beans, Green" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Corn" GridPane.rowIndex="4">
+                              <CheckBox fx:id="chkCorn" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Corn" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Onion" GridPane.rowIndex="5">
+                              <CheckBox fx:id="chkOnion" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Onion" GridPane.rowIndex="5">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Pepper, Green" GridPane.rowIndex="6">
+                              <CheckBox fx:id="chkPepper" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Pepper, Green" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Potato, Yellow" GridPane.rowIndex="7">
+                              <CheckBox fx:id="chkPotato" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Potato, Yellow" GridPane.rowIndex="7">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Pumpkin" GridPane.rowIndex="8">
+                              <CheckBox fx:id="chkPumpkin" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Pumpkin" GridPane.rowIndex="8">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Yam Root" GridPane.rowIndex="9">
+                              <CheckBox fx:id="chkYam" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Yam Root" GridPane.rowIndex="9">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -357,52 +358,52 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox prefWidth="100.0">
+                              <ChoiceBox fx:id="chbBroccoli" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbOnion" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbCarrot" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbAsparagus" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbBean" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbCorn" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="6">
+                              <ChoiceBox fx:id="chbPepper" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="7">
+                              <ChoiceBox fx:id="chbPotato" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="7">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="8">
+                              <ChoiceBox fx:id="chbPumpkin" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="8">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="9">
+                              <ChoiceBox fx:id="chbYam" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="9">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -429,32 +430,35 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Jenga">
+                              <RadioButton fx:id="rdoJenga" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Jenga">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grpBoardGames" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rdoConnect4" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Connect4" toggleGroup="$grpBoardGames" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Connect4" GridPane.rowIndex="1">
+                              <RadioButton fx:id="rdoUno" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Uno" toggleGroup="$grpBoardGames" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Uno" GridPane.rowIndex="2">
+                              <RadioButton fx:id="rdoClue" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Clue" toggleGroup="$grpBoardGames" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Clue" GridPane.rowIndex="3">
+                              <RadioButton fx:id="rdoMonopoly" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Monopoly" toggleGroup="$grpBoardGames" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Monopoly" GridPane.rowIndex="4">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Heads Up" GridPane.rowIndex="5">
+                              <RadioButton fx:id="rdoHeadsUp" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Heads Up" toggleGroup="$grpBoardGames" GridPane.rowIndex="5">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -504,32 +508,32 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbConnect4" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0">
+                              <ChoiceBox fx:id="chbJenga" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbUno" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbClue" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbMonopoly" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbHeadsUp" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -556,32 +560,35 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Google Pixel 4 XL">
+                              <RadioButton fx:id="rdoPixel4" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Google Pixel 4 XL">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grpPhones" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rdoiPhone" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="iPhone 11 Pro Max" toggleGroup="$grpPhones" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="IPhone 11 Pro Max" GridPane.rowIndex="1">
+                              <RadioButton fx:id="rdoSGalaxy" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Samsung Galaxy S10" toggleGroup="$grpPhones" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Samsung Galaxy S10" GridPane.rowIndex="2">
+                              <RadioButton fx:id="rdoOnePlus" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="OnePlus 7 Pro" toggleGroup="$grpPhones" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="OnePlus 7 Pro" GridPane.rowIndex="3">
+                              <RadioButton fx:id="rdoRazer" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Razer - Phone 2" toggleGroup="$grpPhones" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Razer - Phone 2" GridPane.rowIndex="4">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="Nokia 220" GridPane.rowIndex="5">
+                              <RadioButton fx:id="rdoNokia" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Nokia 220" toggleGroup="$grpPhones" GridPane.rowIndex="5">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -631,32 +638,32 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbiPhone" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0">
+                              <ChoiceBox fx:id="chbPixel4" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbSamsung" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbOnePlus" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbRazer" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbNokia" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -686,12 +693,15 @@
                               </Text>
                               <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                                  <children>
-                                    <RadioButton mnemonicParsing="false" text="Credit/Debit Card">
+                                    <RadioButton fx:id="rdoCards" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Credit/Debit Card">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grpPayments" />
+                                       </toggleGroup>
                                     </RadioButton>
-                                    <RadioButton mnemonicParsing="false" text="Cash">
+                                    <RadioButton fx:id="rdoCash" mnemonicParsing="false" onAction="#rdoAnhChkHandle" text="Cash" toggleGroup="$grpPayments">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -707,7 +717,7 @@
       </TabPane>
    </center>
    <left>
-      <TextArea editable="false" prefHeight="570.0" prefWidth="193.0" text="Items in the cart:&#10;" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="txaCart" editable="false" onDragDetected="#rdoAnhChkHandle" prefHeight="570.0" prefWidth="193.0" text="Items in the cart:&#10;" BorderPane.alignment="CENTER" />
    </left>
    <bottom>
       <GridPane gridLinesVisible="true" prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER">
@@ -749,18 +759,18 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="320.0">
                <children>
-                  <ImageView fitHeight="184.0" fitWidth="246.0" layoutX="37.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgItem" fitHeight="184.0" fitWidth="246.0" layoutX="37.0" pickOnBounds="true" preserveRatio="true" />
                   <Text layoutX="37.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
-                  <TextField editable="false" layoutX="87.0" layoutY="183.0">
+                  <TextField fx:id="txfItemName" editable="false" layoutX="87.0" layoutY="183.0" onAction="#rdoAnhChkHandle">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField editable="false" layoutX="87.0" layoutY="228.0">
+                  <TextField fx:id="txfItemCost" editable="false" layoutX="87.0" layoutY="228.0" onAction="#rdoAnhChkHandle">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -775,7 +785,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Text>
-                  <TextArea editable="false" layoutX="5.0" layoutY="303.0" prefHeight="209.0" prefWidth="310.0" />
+                  <TextArea fx:id="txaDesc" editable="false" layoutX="5.0" layoutY="303.0" onDragDetected="#rdoAnhChkHandle" prefHeight="209.0" prefWidth="310.0" />
                </children>
             </AnchorPane>
         </content>

@@ -6,6 +6,7 @@ public class Product {
     private String prodName;
     private int prodUnit;
     private double prodCost;
+    private String prodDesc;
 
     //Constructor
     Product(){
@@ -14,14 +15,16 @@ public class Product {
         setProdName("None");
         setProdUnit(0);
         setProdCost(0.0f);
+        setProdDesc("None");
     }
 
-    Product(String tmpProdName, int tmpProdUnit, double tmpProdCost){
+    Product(String tmpProdName, int tmpProdUnit, double tmpProdCost,String tmpProdDesc){
         Product.nextProdID ++;
         prodID = Product.nextProdID;
         setProdName(tmpProdName);
         setProdUnit(tmpProdUnit);
         setProdCost(tmpProdCost);
+        setProdDesc(tmpProdDesc);
     }
 
 
@@ -57,5 +60,13 @@ public class Product {
 
     public void setProdCost(double prodCost) {
         this.prodCost = prodCost;
+    }
+
+    public String getProdDesc() {
+        return prodDesc;
+    }
+
+    public void setProdDesc(String prodDesc) {
+        this.prodDesc = prodDesc;
     }
 }
