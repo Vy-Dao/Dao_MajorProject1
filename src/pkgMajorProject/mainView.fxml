@@ -22,7 +22,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="925.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgMajorProject.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgMajorProject.Controller">
    <top>
       <Label text="Grocery Application" BorderPane.alignment="CENTER">
          <font>
@@ -163,52 +163,52 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox fx:id="chbApple" prefWidth="100.0">
+                              <ChoiceBox fx:id="chbApple" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbOrange" prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbOrange" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbBanana" prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbBanana" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbCherie" prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbCherie" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbCoconut" prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbCoconut" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbGrape" prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbGrape" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbWatermelon" prefWidth="100.0" GridPane.rowIndex="6">
+                              <ChoiceBox fx:id="chbWatermelon" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbPeach" prefWidth="100.0" GridPane.rowIndex="7">
+                              <ChoiceBox fx:id="chbPeach" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="7">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbPineapple" prefWidth="100.0" GridPane.rowIndex="8">
+                              <ChoiceBox fx:id="chbPineapple" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="8">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbKiwi" prefWidth="100.0" GridPane.rowIndex="9">
+                              <ChoiceBox fx:id="chbKiwi" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="9">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -358,52 +358,52 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox fx:id="chbBroccoli" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0">
+                              <ChoiceBox fx:id="chbBroccoli" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbOnion" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbOnion" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbCarrot" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbCarrot" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbAsparagus" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbAsparagus" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbBean" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbBean" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbCorn" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbCorn" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbPepper" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="6">
+                              <ChoiceBox fx:id="chbPepper" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="6">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbPotato" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="7">
+                              <ChoiceBox fx:id="chbPotato" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="7">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbPumpkin" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="8">
+                              <ChoiceBox fx:id="chbPumpkin" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="8">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbYam" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="9">
+                              <ChoiceBox fx:id="chbYam" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="9">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -508,32 +508,32 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox fx:id="chbConnect4" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbConnect4" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbJenga" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0">
+                              <ChoiceBox fx:id="chbJenga" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbUno" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbUno" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbClue" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbClue" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbMonopoly" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbMonopoly" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbHeadsUp" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbHeadsUp" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -638,32 +638,32 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox fx:id="chbiPhone" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
+                              <ChoiceBox fx:id="chbiPhone" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbPixel4" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0">
+                              <ChoiceBox fx:id="chbPixel4" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbSamsung" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
+                              <ChoiceBox fx:id="chbSamsung" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbOnePlus" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
+                              <ChoiceBox fx:id="chbOnePlus" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbRazer" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
+                              <ChoiceBox fx:id="chbRazer" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
                               </ChoiceBox>
-                              <ChoiceBox fx:id="chbNokia" onDragDetected="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
+                              <ChoiceBox fx:id="chbNokia" disable="true" onMouseClicked="#rdoAnhChkHandle" prefWidth="100.0" GridPane.rowIndex="5">
                                  <GridPane.margin>
                                     <Insets left="90.0" />
                                  </GridPane.margin>
@@ -717,7 +717,7 @@
       </TabPane>
    </center>
    <left>
-      <TextArea fx:id="txaCart" editable="false" onDragDetected="#rdoAnhChkHandle" prefHeight="570.0" prefWidth="193.0" text="Items in the cart:&#10;" BorderPane.alignment="CENTER" />
+      <TextArea fx:id="txaCart" editable="false" onDragDetected="#rdoAnhChkHandle" prefHeight="530.0" prefWidth="293.0" text="Items in the cart:&#10;" BorderPane.alignment="CENTER" />
    </left>
    <bottom>
       <GridPane gridLinesVisible="true" prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER">

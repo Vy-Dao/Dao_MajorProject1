@@ -1,10 +1,17 @@
 package pkgMajorProject;
 
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Controller {
 
@@ -67,7 +74,61 @@ public class Controller {
     Product p32 = new Product("Nokia 220",31,19.99f," Nokia 220 4G can access to the Internet, Facebook, and in some markets even HD voice calls. But unlike even the cheapest smartphone, you can get that with a battery life that lasts days, not hours.");
     //
 
+    //Creating link list for inventory
+    static LinkedList<Product> allProduct = new LinkedList<Product>();
+
+    public void unSubmitCard(){
+        txaCart.setText("Item in the cart are (Un-submit):\n");
+        for (int ct = 0; ct < allProduct.size(); ct++){
+            Product tmpProductItem = allProduct.get(ct);
+            txaCart.appendText(String.format("%nName: %s",tmpProductItem.getProdName()));
+        }
+    }
+
+    public  void itemInTheList(ChoiceBox tmpChb){
+        System.out.printf("Items in the list are:%n");
+        for (int i = 0; i <allProduct.size();i++){
+            Product tmpProdcut = allProduct.get(i);
+            System.out.printf(tmpProdcut.getProdName() + " - Unit: " + tmpChb.getValue() + "\n");
+        }
+        System.out.println();
+    }
+
+    public void productAdd(ChoiceBox tmpChb, Product tmpProd){
+        allProduct.add(tmpProd);
+        tmpChb.setDisable(false);
+        List<Integer> tmplist = new ArrayList<Integer>();
+        for(int ct = 0; ct < tmpProd.getProdUnit(); ct++){
+            tmplist.add(ct);
+        }
+        ObservableList<Integer> tmp = FXCollections.observableArrayList(tmplist);
+        tmpChb.setItems(tmp);
+        tmpChb.getSelectionModel().selectFirst();
+
+    }
+    //Action Handler
     public void rdoAnhChkHandle(Event e){
+        if((e.getSource()==chkApple) && (! allProduct.contains(p1))){
+            productAdd(chbApple,p1);
+            itemInTheList(chbApple);
+        }
+        else if(chkApple.isSelected() == false && (allProduct.contains(p1))){
+            System.out.println("Apple has been deleted from the cart");
+            allProduct.remove(p1);
+            chbApple.setDisable(true);
+
+        }
+        else if ((e.getSource()==chkBanana) && (!allProduct.contains(p2))){
+            productAdd(chbBanana,p2);
+            itemInTheList(chbBanana);
+
+        }
+        else if(chkBanana.isSelected() == false && (allProduct.contains(p2))){
+            System.out.println("Banana has been deleted from the cart");
+            allProduct.remove(p2);
+
+        }
+        unSubmitCard();
     }
     public void btnActionHandel(ActionEvent e){
     }
