@@ -1,3 +1,12 @@
+/*
+Author : Vy Dao
+Course : CSIS 335
+Assignment: Major Project1
+Due Date : 10/14/2019
+Date handed : 10/14/2019
+Description: This is the controller file where the developer used to create all of the connection between the FXML file and the program.
+This file also includes all of the function to make the Grocery application work normally.
+ */
 package pkgMajorProject;
 
 
@@ -6,16 +15,17 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Controller {
 
@@ -45,12 +55,18 @@ public class Controller {
         //RadioButton for Payment
     @FXML RadioButton rdoCards; @FXML RadioButton rdoCash;
 
+    //EXTRA CREDIT TESTING
+    @FXML    TableView<ProductInTable> tbvOutput;
+    @FXML    TableColumn<ProductInTable, Integer> tbcID;  @FXML    TableColumn<ProductInTable, String> tbcName;  @FXML    TableColumn<ProductInTable, Integer> tbcUnit;
+    @FXML TableColumn<ProductInTable, Double> tbcCost;
+    //
+
     //Creating products
     Product p1 = new Product("Apple",10,1.0f,"Apples are extremely rich in important antioxidants, flavanoids, and dietary fiber.","apple.gif");
     Product p2 = new Product("Banana",20,1.5f,"Bananas contain many important nutrients, may improve digestive health, and may aid weight loss","banana.gif");
-    Product p3 = new Product("Cherries",5,2.0f,"Cherries are full of antioxidants and rich in antioxidants and anti-inflammatory compounds","cherries.jpg");
+    Product p3 = new Product("Cherry",5,2.0f,"Cherry are full of antioxidants and rich in antioxidants and anti-inflammatory compounds","cherries.jpg");
     Product p4 = new Product("Coconut",6,.5f,"Coconut is a high-fat fruit that has a wide range of health benefits. These include providing you with disease-fighting antioxidants, promoting blood sugar regulation, and reducing certain risk factors for heart disease.","coconutmeat.gif");
-    Product p5 = new Product("Grape",7,1.25f,"The nutrients in grapes may help protect against cancer, eye problems, cardiovascular disease, and other health conditions. Resveratrol is a key nutrient in grapes that may offer health benefits.","grapes.jpg");
+    Product p5 = new Product("Grape",7,1.25f,"Grape may help protect against cancer, eye problems, cardiovascular disease, and other health conditions. Resveratrol is a key nutrient in grapes that may offer health benefits.","grapes.jpg");
     Product p6 = new Product("Orange",30,1.52f,"Oranges are a healthy source of fiber, vitamin C, thiamine, folate, and antioxidants. They have multiple health benefits.","orange.gif");
     Product p7 = new Product("Watermelon",40,3.0f,"Watermelons are mostly water — about 92 percent — but this refreshing fruit is soaked with nutrients. Each juicy bite has significant levels of vitamins A, B6 and C, lots of lycopene, antioxidants and amino acids. There's even a modest amount of potassium.","watermelon.gif");
     Product p8 = new Product("Peach",12,2.5f,"Peaches are good for digestion. They can boost your immune system, perk up your skin too. Peaches protect your eyes. They may lower cancer risk.","peach.jpg");
@@ -59,25 +75,25 @@ public class Controller {
     Product p11 = new Product("Broccoli",15,0.6f,"Broccoli is a great source of vitamins K and C, a good source of folate (folic acid) and also provides potassium, fiber.","broccoli.jpg");
     Product p12 = new Product("Carrot",21,1.34f,"Carrots contain vitamin A, antioxidants, and other nutrients. Evidence suggests that eating more antioxidant-rich fruits and vegetables, such as carrots, can help reduce the risks of cancer and cardiovascular disease.","carrots.jpg");
     Product p13 = new Product("Asparagus",23,1.90f,"Asparagus is a nutrient-packed vegetable. It is a very good source of fiber, folate, vitamins A, C, E and K, as well as chromium, a trace mineral that enhances the ability of insulin to transport glucose from the bloodstream into cells","asparagus.jpg");
-    Product p14 = new Product("Bean",9,0.68f,"Not only are green beans a nice, crunchy, low-calorie food but also they provide many key nutrients.Young, tender green beans are a good source of vitamin C, dietary fiber, folate, vitamin K and silicon (needed for healthy bones, skin, and hair)","greenbeans.gif");
-    Product p15 = new Product("Corn",12,2.1f,"Reduces the risk of Anemia. Corn is rich is in Vitamin B12, folic acid and iron which helps in the production of red blood cells in the body","corn.jpg");
+    Product p14 = new Product("Green Bean",9,0.68f,"Green beans are a nice, crunchy, low-calorie food but also they provide many key nutrients.Young, tender green beans are a good source of vitamin C, dietary fiber, folate, vitamin K and silicon (needed for healthy bones, skin, and hair)","greenbeans.gif");
+    Product p15 = new Product("Corn",12,2.1f,"Corn reduces the risk of Anemia. Corn is rich is in Vitamin B12, folic acid and iron which helps in the production of red blood cells in the body","corn.jpg");
     Product p16 = new Product("Onion",16,0.55f,"Onions are rich in antioxidants. They may protect against cancer. Onions improve bone density. Onions also support healthy digestion. They may help lower cholesterol.","onionwhite.gif");
-    Product p17 = new Product("Pepper",23,1.22f,"Bell peppers are rich in many vitamins and antioxidants, especially vitamin C and various carotenoids. It can improved eye health and reduced risk of several chronic diseases.","peppergreen.jpg");
+    Product p17 = new Product("Bell Pepper",23,1.22f,"Bell peppers are rich in many vitamins and antioxidants, especially vitamin C and various carotenoids. It can improved eye health and reduced risk of several chronic diseases.","peppergreen.jpg");
     Product p18 = new Product("Potato",14,3.9f,"Potatoes also contain a variety of phytonutrients that have antioxidant activity. Among these important health-promoting compounds are carotenoids, flavonoids, and caffeic acid.","potatoes.jpg");
-    Product p19 = new Product("Pumpkin",18,2.1f,"The potassium contained within pumpkins can have a positive effect on blood pressure. The antioxidants in pumpkin could help prevent degenerative damage to the eyes.","pumpkin.jpg");
-    Product p20 = new Product("Yam",22,2.14f,". They're a great source of fiber, potassium, manganese, copper, and antioxidants. Yams are linked to various health benefits and may boost brain health, reduce inflammation, and improve blood sugar control.","yamroot.gif");
-    Product p21 = new Product("Jenga",7,6.88f,"Want a game experience that combines friends, skill, suspense, laughter, and maybe a little luck? You gotta get the Classic Jenga game! It’s the perfect game for everyone, with edge-of-your-seat, gravity-defying action. Do you dive right in and pull your block, or take your time and study the stack? Any way you choose, show your Jenga style!","jenga.jpeg");
-    Product p22 = new Product("Connect4",8,5.51f,"Challenge a friend to rule the grid in Connect 4 Classic Grid, the game where strategy drives the competition! Line ‘em up and go for the win! Choose the gold discs or the red discs and drop them into the grid. When you get 4 discs in a row, you win. It’s simple, fast, and fun. Master the grid.","Connect4.jpeg");
+    Product p19 = new Product("Pumpkin",18,2.1f,"Pumpkin contains potassium which can have a positive effect on blood pressure. The antioxidants in pumpkin could help prevent degenerative damage to the eyes.","pumpkin.jpg");
+    Product p20 = new Product("Yam",22,2.14f,"Yams are a great source of fiber, potassium, manganese, copper, and antioxidants. Yams are linked to various health benefits and may boost brain health, reduce inflammation, and improve blood sugar control.","yamroot.gif");
+    Product p21 = new Product("Jenga",7,6.88f,"Jenga! Want a game experience that combines friends, skill, suspense, laughter, and maybe a little luck? You gotta get the Classic Jenga game! It’s the perfect game for everyone, with edge-of-your-seat, gravity-defying action. Do you dive right in and pull your block, or take your time and study the stack? Any way you choose, show your Jenga style!","jenga.jpeg");
+    Product p22 = new Product("Connect4",8,5.51f,"Connect4! Challenge a friend to rule the grid in Connect 4 Classic Grid, the game where strategy drives the competition! Line ‘em up and go for the win! Choose the gold discs or the red discs and drop them into the grid. When you get 4 discs in a row, you win. It’s simple, fast, and fun. Master the grid.","Connect4.jpeg");
     Product p23 = new Product("Uno",23,9.84f,"UNO is the card game that's easy to pick up and impossible to put down! All it takes to win is a little coordination between colors (red, green, blue, and yellow) and numbers. This fun family card game is takes only minutes to learn and is so much fun to play!","Uno.jpeg");
-    Product p24 = new Product("Clue",13,8.77f,"The mystery you love to solve again and again is even more intense! Clue is back with a modern twist, and you have to find out who is responsible for murdering the host at a millionaire's mansion or a boardwalk.","Clue.jpeg");
-    Product p25 = new Product("Monopoly",14,12.00f,"Challenge friends and family and play the Monopoly Ultimate Banking game! This game presents a modern banking version of the Monopoly game in which Monopoly money is no more! Featuring an Ultimate Banking unit with touch technology, players can instantly buy properties, set rent, and tap their way to fortune.","Monopoly.jpeg");
+    Product p24 = new Product("Clue",13,8.77f,"Clue! The mystery you love to solve again and again is even more intense! Clue is back with a modern twist, and you have to find out who is responsible for murdering the host at a millionaire's mansion or a boardwalk.","Clue.jpeg");
+    Product p25 = new Product("Monopoly",14,12.00f,"Monopoly! Challenge friends and family and play the Monopoly Ultimate Banking game! This game presents a modern banking version of the Monopoly game in which Monopoly money is no more! Featuring an Ultimate Banking unit with touch technology, players can instantly buy properties, set rent, and tap their way to fortune.","Monopoly.jpeg");
     Product p26 = new Product("Heads Up",21, 11.04f,"Heads Up! Party Game lets you play the party game version of the popular app seen on The Ellen DeGeneres Show! Put on a headband and place game cards in with the words facing out - without looking at them!","HeadsUp.jpeg");
-    Product p27 = new Product("Google Pixel 3XL",29,999.85f,"The Google Pixel 4XL takes what's good about the iPhone and applies it to Android. Whether you think that's a good or a bad thing, the Pixel 4XL needs to be experienced to be fully understood. It is one of the best Android phones you can buy right now and quite possibly has the best camera available.","pixel4.jpg");
-    Product p28 = new Product("iPhone Pro Max",30,1099.00f,"The iPhone 11 Pro takes what made the XS great and improves battery life and the camera. The iPhone has arguably taken back the crown for best mobile camera, though the pending Pixel 4 has us curious to see if Apple can keep the title for long. Aside from the tempting camera, there's little else here to lure Android fans away, but we still have to admit it's a great phone.","iphon11Promax.png");
-    Product p29 = new Product("Samsung Galaxy S10 Plus",22,999.99f,"The Samsung Galaxy S10 Plus is the best phone Samsung has ever sold, but still struggles with image quality.","galaxys10.jpg");
-    Product p30 = new Product("OnePlus 7 Pro",15,829.00f,"The OnePlus 7T Pro is as close as OnePlus has gotten to the upper echelons of smartphone tech. It brings finesse to a game that the company has perfected, and melds top of the line hardware with a software build that truly impresses.","OnePlus 7 Pro.jpg");
-    Product p31 = new Product("Razer - Phone 2",9,799.99f,"The Razer Phone 2 is one of the few high-end flagships you can buy this year at the sub-$1,000 price point. It improves on the original Razer Phone by adding IP certification, wireless charging, and is still fantastic for gaming. It's an excellent flagship choice as long as your main priority isn't the camera.","Razer - Phone 2.jpg");
-    Product p32 = new Product("Nokia 220",31,19.99f," Nokia 220 4G can access to the Internet, Facebook, and in some markets even HD voice calls. But unlike even the cheapest smartphone, you can get that with a battery life that lasts days, not hours.","Nokia 220.jpg");
+    Product p27 = new Product("Google Pixel 4XL",29,999.85f,"Google Pixel 4XL takes what's good about the iPhone and applies it to Android. Whether you think that's a good or a bad thing, the Pixel 4XL needs to be experienced to be fully understood. It is one of the best Android phones you can buy right now and quite possibly has the best camera available.","pixel4.jpg");
+    Product p28 = new Product("iPhone Pro Max",30,1099.00f,"iPhone 11 Pro takes what made the XS great and improves battery life and the camera. The iPhone has arguably taken back the crown for best mobile camera, though the pending Pixel 4 has us curious to see if Apple can keep the title for long. Aside from the tempting camera, there's little else here to lure Android fans away, but we still have to admit it's a great phone.","iphon11Promax.png");
+    Product p29 = new Product("Samsung Galaxy S10 Plus",22,999.99f,"Samsung Galaxy S10 Plus is the best phone Samsung has ever sold, but still struggles with image quality.","galaxys10.jpg");
+    Product p30 = new Product("OnePlus 7 Pro",15,829.00f,"OnePlus 7T Pro is as close as OnePlus has gotten to the upper echelons of smartphone tech. It brings finesse to a game that the company has perfected, and melds top of the line hardware with a software build that truly impresses.","OnePlus 7 Pro.jpg");
+    Product p31 = new Product("Razer - Phone 2",9,799.99f,"Razer Phone 2 is one of the few high-end flagships you can buy this year at the sub-$1,000 price point. It improves on the original Razer Phone by adding IP certification, wireless charging, and is still fantastic for gaming. It's an excellent flagship choice as long as your main priority isn't the camera.","Razer - Phone 2.jpg");
+    Product p32 = new Product("Nokia 220",31,19.99f,"Nokia 220 4G can access to the Internet, Facebook, and in some markets even HD voice calls. But unlike even the cheapest smartphone, you can get that with a battery life that lasts days, not hours.","Nokia 220.jpg");
     //
 
     //Creating link list for inventory
@@ -85,17 +101,21 @@ public class Controller {
     static LinkedList<Product> allProductSubmitted = new LinkedList<Product>();
     static LinkedList<Integer> allProductUnit = new LinkedList<Integer>();
 
+    //Confirmation item in the cart
     public void SubmitCard(){
-        txaCart.setText("Item in the cart are (Submitted):\n");
+        txaCart.setText("Item in the cart are (Submitted):");
         for (int ct = 0; ct < allProductSubmitted.size(); ct++){
             Product tmpProductItem = allProductSubmitted.get(ct);
             int index = ct+1;
             txaCart.appendText(String.format("%n%d. %s - Unit %d",index,tmpProductItem.getProdName(),allProductUnit.get(ct)));
         }
+
     }
 
+    //Updated real-time for item in the cart
     public void unSubmitCart(){
-        txaCart.setText("Item in the cart are (Un-submit):\n");
+        txaCart.setText("*NOTE: User need to choose at least 1 item and payment to enable submit*");
+        txaCart.appendText("\nItem in the cart are (Un-submit):");
         for (int ct = 0; ct < allProduct.size(); ct++){
             Product tmpProductItem = allProduct.get(ct);
             int index = ct+1;
@@ -103,6 +123,7 @@ public class Controller {
         }
     }
 
+    //Adding Product into list
     public void addProduct(Product tmpProd,ChoiceBox tmpChb){
         allProduct.add(tmpProd);
         tmpChb.setDisable(false);
@@ -113,8 +134,10 @@ public class Controller {
         ObservableList<Integer> tmp = FXCollections.observableArrayList(tmplist);
         tmpChb.setItems(tmp);
         tmpChb.getSelectionModel().selectFirst();
+        unSubmitCart();
     }
 
+    // Product information display
     public void inforProdcut(Product tmpProd){
             Image img = new Image(tmpProd.getProdImgURL());
             imgItem.setImage(img);
@@ -123,6 +146,8 @@ public class Controller {
             txaDesc.setText(tmpProd.getProdDesc());
             txaDesc.setWrapText(true);
         }
+
+        //Remove Product display
     public void removeProduct(Product tmpProd, ChoiceBox tmpChb){
         System.out.println(tmpProd.getProdName() + " has been deleted from the cart");
         allProduct.remove(tmpProd);
@@ -130,6 +155,7 @@ public class Controller {
         tmpChb.setDisable(true);
     }
 
+    //Remove checker for radiobutton
     public void  removeRdoProduct(Product tmpP1, Product tmpP2, Product tmpP3, Product tmpP4, Product tmpP5, ChoiceBox tmpCb1, ChoiceBox tmpCb2, ChoiceBox tmpCb3, ChoiceBox tmpCb4, ChoiceBox tmpCb5){
         if (allProduct.contains(tmpP1)){
             System.out.println(tmpP1.getProdName() + " has been deleted from the cart");
@@ -163,6 +189,7 @@ public class Controller {
         }
 
     }
+    //Add the unit number to allProductUnit
     private void addUnitOnProduct(Product tmpProduct) {
         if (tmpProduct.getProdID() == 1){ allProductUnit.add(Integer.parseInt(chbApple.getValue().toString()));}
         else if (tmpProduct.getProdID() == 2){ allProductUnit.add(Integer.parseInt(chbBanana.getValue().toString()));}
@@ -174,9 +201,66 @@ public class Controller {
         else if (tmpProduct.getProdID() == 8){ allProductUnit.add(Integer.parseInt(chbPeach.getValue().toString()));}
         else if (tmpProduct.getProdID() == 9){ allProductUnit.add(Integer.parseInt(chbPineapple.getValue().toString()));}
         else if (tmpProduct.getProdID() == 10){ allProductUnit.add(Integer.parseInt(chbKiwi.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 11){ allProductUnit.add(Integer.parseInt(chbBroccoli.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 12){ allProductUnit.add(Integer.parseInt(chbCarrot.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 13){ allProductUnit.add(Integer.parseInt(chbAsparagus.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 14){ allProductUnit.add(Integer.parseInt(chbBean.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 15){ allProductUnit.add(Integer.parseInt(chbCorn.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 16){ allProductUnit.add(Integer.parseInt(chbOnion.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 17){ allProductUnit.add(Integer.parseInt(chbPepper.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 18){ allProductUnit.add(Integer.parseInt(chbPotato.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 19){ allProductUnit.add(Integer.parseInt(chbPumpkin.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 20){ allProductUnit.add(Integer.parseInt(chbYam.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 21){ allProductUnit.add(Integer.parseInt(chbJenga.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 22){ allProductUnit.add(Integer.parseInt(chbConnect4.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 23){ allProductUnit.add(Integer.parseInt(chbUno.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 24){ allProductUnit.add(Integer.parseInt(chbClue.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 25){ allProductUnit.add(Integer.parseInt(chbMonopoly.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 26){ allProductUnit.add(Integer.parseInt(chbHeadsUp.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 27){ allProductUnit.add(Integer.parseInt(chbPixel4.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 28){ allProductUnit.add(Integer.parseInt(chbiPhone.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 29){ allProductUnit.add(Integer.parseInt(chbSamsung.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 30){ allProductUnit.add(Integer.parseInt(chbOnePlus.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 31){ allProductUnit.add(Integer.parseInt(chbRazer.getValue().toString()));}
+        else if (tmpProduct.getProdID() == 32){ allProductUnit.add(Integer.parseInt(chbNokia.getValue().toString()));}
     }
 
-    //Action Handler
+    //Clear, empty everything.
+    public void clearEverything(){
+        chkApple.setSelected(false); chkBanana.setSelected(false); chkCherie.setSelected(false); chkCoconut.setSelected(false); chkGrape.setSelected(false);
+        chkOrange.setSelected(false); chkWatermelon.setSelected(false); chkPeach.setSelected(false); chkPineapple.setSelected(false); chkKiwi.setSelected(false);
+        chkBroccoli.setSelected(false); chkCarrot.setSelected(false); chkAsparagus.setSelected(false); chkBean.setSelected(false);
+        chkCorn.setSelected(false); chkOnion.setSelected(false); chkPepper.setSelected(false); chkPotato.setSelected(false); chkPumpkin.setSelected(false); chkYam.setSelected(false);
+        rdoJenga.setSelected(false); rdoConnect4.setSelected(false); rdoUno.setSelected(false); rdoClue.setSelected(false); rdoMonopoly.setSelected(false); rdoHeadsUp.setSelected(false);
+        rdoPixel4.setSelected(false); rdoiPhone.setSelected(false); rdoSGalaxy.setSelected(false); rdoOnePlus.setSelected(false); rdoRazer.setSelected(false); rdoNokia.setSelected(false);
+        rdoCash.setSelected(false); rdoCards.setSelected(false);
+
+        chbApple.setDisable(true); chbBanana.setDisable(true); chbCherie.setDisable(true); chbCoconut.setDisable(true); chbGrape.setDisable(true);
+        chbOrange.setDisable(true); chbWatermelon.setDisable(true); chbPeach.setDisable(true); chbPineapple.setDisable(true); chbKiwi.setDisable(true);
+        chbBroccoli.setDisable(true); chbCarrot.setDisable(true); chbAsparagus.setDisable(true); chbBean.setDisable(true);
+        chbCorn.setDisable(true); chbOnion.setDisable(true); chbPepper.setDisable(true); chbPotato.setDisable(true); chbPumpkin.setDisable(true); chbYam.setDisable(true);
+        chbJenga.setDisable(true); chbConnect4.setDisable(true); chbUno.setDisable(true); chbClue.setDisable(true); chbMonopoly.setDisable(true); chbHeadsUp.setDisable(true);
+        chbPixel4.setDisable(true); chbiPhone.setDisable(true); chbSamsung.setDisable(true); chbOnePlus.setDisable(true); chbRazer.setDisable(true); chbNokia.setDisable(true);
+
+        chbApple.setValue(null); chbBanana.setValue(null); chbCherie.setValue(null); chbCoconut.setValue(null); chbGrape.setValue(null);
+        chbOrange.setValue(null); chbWatermelon.setValue(null); chbPeach.setValue(null); chbPineapple.setValue(null); chbKiwi.setValue(null);
+        chbBroccoli.setValue(null); chbCarrot.setValue(null); chbAsparagus.setValue(null); chbBean.setValue(null);
+        chbCorn.setValue(null); chbOnion.setValue(null); chbPepper.setValue(null); chbPotato.setValue(null); chbPumpkin.setValue(null); chbYam.setValue(null);
+        chbJenga.setValue(null); chbConnect4.setValue(null); chbUno.setValue(null); chbClue.setValue(null); chbMonopoly.setValue(null); chbHeadsUp.setValue(null);
+        chbPixel4.setValue(null); chbiPhone.setValue(null); chbSamsung.setValue(null); chbOnePlus.setValue(null); chbRazer.setValue(null); chbNokia.setValue(null);
+
+        allProduct.clear();
+        allProductUnit.clear();
+        unSubmitCart();
+        imgItem.setImage(null);
+        txfItemName.clear();
+        txfItemCost.clear();
+        txaDesc.clear();
+        btnSubmit.setDisable(true); btnPrintInvTable.setDisable(true); btnPrintInv.setDisable(true);
+        tbvOutput.getItems().clear();
+    }
+
+    //Radiobutton  and checkbox handel function
     public void rdoAnhChkHandle(Event e){
         if((e.getSource()==chkApple) && (! allProduct.contains(p1))){
             addProduct(p1,chbApple);
@@ -207,7 +291,7 @@ public class Controller {
             addProduct(p4,chbCoconut);
             inforProdcut(p4);
         }
-        else if(chkBanana.isSelected() == false && (allProduct.contains(p4))){
+        else if(chkCoconut.isSelected() == false && (allProduct.contains(p4))){
             inforProdcut(p4);
             removeProduct(p4,chbCoconut);
         }
@@ -215,7 +299,7 @@ public class Controller {
             addProduct(p5,chbGrape);
             inforProdcut(p5);
         }
-        else if(chkBanana.isSelected() == false && (allProduct.contains(p5))){
+        else if(chkGrape.isSelected() == false && (allProduct.contains(p5))){
             inforProdcut(p5);
             removeProduct(p5,chbGrape);
         }
@@ -428,13 +512,20 @@ public class Controller {
             Image img = new Image("currency.jpg");
             imgItem.setImage(img);
             txfItemName.setText("Cash");
-            txfItemCost.setText(String.format("$-%.2f%s",5.00f,"%"));
+            txfItemCost.setText("5% Discount");
             txaDesc.setText("You will receive 5% discount on the total amount of your items if you are using cash to pay for you items");
             txaDesc.setWrapText(true);
         }
-        unSubmitCart();
-    }
+        if (!allProduct.isEmpty() && (rdoCash.isSelected() || rdoCards.isSelected()))
+            btnSubmit.setDisable(false);
+        else
+            btnSubmit.setDisable(true);
 
+            btnPrintInv.setDisable(true);
+            btnPrintInvTable.setDisable(true);
+        }
+
+        //Handle choicebox Pressed to change image
     public void chbImageHandel(Event e){
         if (e.getSource() == chbApple){
             inforProdcut(p1);
@@ -533,50 +624,71 @@ public class Controller {
             inforProdcut(p32);
         }
     }
-    public void btnActionHandel(ActionEvent e){
+    public void btnActionHandel(ActionEvent e) {
+
         if (e.getSource() == btnClear){
-            chkApple.setSelected(false); chkBanana.setSelected(false); chkCherie.setSelected(false); chkCoconut.setSelected(false); chkGrape.setSelected(false);
-            chkOrange.setSelected(false); chkWatermelon.setSelected(false); chkPeach.setSelected(false); chkPineapple.setSelected(false); chkKiwi.setSelected(false);
-            chkBroccoli.setSelected(false); chkCarrot.setSelected(false); chkAsparagus.setSelected(false); chkBean.setSelected(false);
-            chkCorn.setSelected(false); chkOnion.setSelected(false); chkPepper.setSelected(false); chkPotato.setSelected(false); chkPumpkin.setSelected(false); chkYam.setSelected(false);
-            rdoJenga.setSelected(false); rdoConnect4.setSelected(false); rdoUno.setSelected(false); rdoClue.setSelected(false); rdoMonopoly.setSelected(false); rdoHeadsUp.setSelected(false);
-            rdoPixel4.setSelected(false); rdoiPhone.setSelected(false); rdoSGalaxy.setSelected(false); rdoOnePlus.setSelected(false); rdoRazer.setSelected(false); rdoNokia.setSelected(false);
-            rdoCash.setSelected(false); rdoCards.setSelected(false);
-
-            chbApple.setDisable(true); chbBanana.setDisable(true); chbCherie.setDisable(true); chbCoconut.setDisable(true); chbGrape.setDisable(true);
-            chbOrange.setDisable(true); chbWatermelon.setDisable(true); chbPeach.setDisable(true); chbPineapple.setDisable(true); chbKiwi.setDisable(true);
-            chbBroccoli.setDisable(true); chbCarrot.setDisable(true); chbAsparagus.setDisable(true); chbBean.setDisable(true);
-            chbCorn.setDisable(true); chbOnion.setDisable(true); chbPepper.setDisable(true); chbPotato.setDisable(true); chbPumpkin.setDisable(true); chbYam.setDisable(true);
-            chbJenga.setDisable(true); chbConnect4.setDisable(true); chbUno.setDisable(true); chbClue.setDisable(true); chbMonopoly.setDisable(true); chbHeadsUp.setDisable(true);
-            chbPixel4.setDisable(true); chbiPhone.setDisable(true); chbSamsung.setDisable(true); chbOnePlus.setDisable(true); chbRazer.setDisable(true); chbNokia.setDisable(true);
-
-            chbApple.setValue(null); chbBanana.setValue(null); chbCherie.setValue(null); chbCoconut.setValue(null); chbGrape.setValue(null);
-            chbOrange.setValue(null); chbWatermelon.setValue(null); chbPeach.setValue(null); chbPineapple.setValue(null); chbKiwi.setValue(null);
-            chbBroccoli.setValue(null); chbCarrot.setValue(null); chbAsparagus.setValue(null); chbBean.setValue(null);
-            chbCorn.setValue(null); chbOnion.setValue(null); chbPepper.setValue(null); chbPotato.setValue(null); chbPumpkin.setValue(null); chbYam.setValue(null);
-            chbJenga.setValue(null); chbConnect4.setValue(null); chbUno.setValue(null); chbClue.setValue(null); chbMonopoly.setValue(null); chbHeadsUp.setValue(null);
-            chbPixel4.setValue(null); chbiPhone.setValue(null); chbSamsung.setValue(null); chbOnePlus.setValue(null); chbRazer.setValue(null); chbNokia.setValue(null);
-
-            allProduct.clear();
-            allProductUnit.clear();
-            unSubmitCart();
-            imgItem.setImage(null);
-            txfItemName.clear();
-            txfItemCost.clear();
-            txaDesc.clear();
+            clearEverything();
         }
 
-        //Change this e get score to submit / and try to make a flag to change submit from disable to enable if we have more than 1 item in the List also try to finish
-        //the addUnitOnProduct function
-        else if(e.getSource()==btnPrintInv){
+        else if(e.getSource()==btnSubmit){
             allProductUnit.clear();
             allProductSubmitted = allProduct;
+            Collections.sort(allProductSubmitted, new Comparator<Product>() {
+                @Override
+                public int compare(Product tmp1, Product tmp2) {
+                    return tmp1.getProdDesc().compareTo(tmp2.getProdDesc());
+
+                }
+            });
             for (int ct = 0; ct < allProductSubmitted.size(); ct++){
                 addUnitOnProduct(allProductSubmitted.get(ct));
             }
             SubmitCard();
+            btnPrintInv.setDisable(false);
+            btnPrintInvTable.setDisable(false);
+            }
+        else  if (e.getSource() == btnPrintInv){
+            double totalSpentBeforeTax = 0, totalCostEachItem, finalTotal;
+            txaCart.setText("RECEIPT SUMMARY:\n");
+            txaCart.appendText("***************************************");
+            txaCart.appendText("\nProduct Name (ID) - Unit: (Amount) - Cost: $(Amount)\n");
+            for (int ct = 0; ct < allProductSubmitted.size(); ct++){
+                Product tmpProductItem = allProductSubmitted.get(ct);
+                totalCostEachItem = allProductUnit.get(ct) * tmpProductItem.getProdCost();
+                String formartString = "%n%s (%d) - Unit: %d - Cost: %s%.2f%n";
+
+                txaCart.appendText(String.format(formartString,tmpProductItem.getProdName(),tmpProductItem.getProdID(),allProductUnit.get(ct),"$",totalCostEachItem));
+                totalSpentBeforeTax += totalCostEachItem;
+            }
+            txaCart.appendText(String.format("%n%s%.2f","Total amount before discount: $" ,totalSpentBeforeTax));
+            if (rdoCards.isSelected()){
+                txaCart.appendText("\nPayment method: Credit/Debit Card");
+                txaCart.appendText("\nDiscount: 0%");
+                finalTotal = totalSpentBeforeTax;
+                txaCart.appendText(String.format("%n%s%.2f","The total amount that you have to pay: $",finalTotal));
+            }
+            else if(rdoCash.isSelected()){
+                txaCart.appendText("\nPayment method: Cash");
+                txaCart.appendText("\nDiscount: 5%");
+                finalTotal = totalSpentBeforeTax - (totalSpentBeforeTax*5f/100f);
+                txaCart.appendText(String.format("%n%s%.2f","The total amount that you have to pay: $",finalTotal));
             }
         }
+        else if (e.getSource() == btnPrintInvTable) {
+            ObservableList<ProductInTable> inventoryProduct = FXCollections.observableArrayList();
+            for (int ct = 0; ct < allProductSubmitted.size(); ct++){
+                Product tmpProductItem = allProductSubmitted.get(ct);
+                inventoryProduct.add(new ProductInTable(tmpProductItem.getProdID(),tmpProductItem.getProdName(),allProductUnit.get(ct),allProductUnit.get(ct) * tmpProductItem.getProdCost()));
+            }
+            tbcID.setCellValueFactory(new PropertyValueFactory<ProductInTable,Integer>("prodIDInTable"));
+            tbcName.setCellValueFactory(new PropertyValueFactory<ProductInTable,String>("prodNameInTable"));
+            tbcUnit.setCellValueFactory(new PropertyValueFactory<ProductInTable,Integer>("prodTotalUnit"));
+            tbcCost.setCellValueFactory(new PropertyValueFactory<ProductInTable,Double>("prodCost"));
+            tbvOutput.setItems(inventoryProduct);
+
+        }
     }
+
+}
 
 

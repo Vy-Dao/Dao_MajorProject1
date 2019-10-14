@@ -1,13 +1,21 @@
+/*
+Author : Vy Dao
+Course : CSIS 335
+Assignment: Major Project1
+Due Date : 10/14/2019
+Date handed : 10/14/2019
+Description: This file contains the Product view with all of its method.
+ */
 package pkgMajorProject;
 
-public class Product {
-    private static int nextProdID;
-    private int prodID;
-    private String prodName;
-    private int prodUnit;
-    private double prodCost;
-    private String prodDesc;
-    private String prodImgURL;
+public class Product{
+    protected static int nextProdID;
+    protected int prodID;
+    protected String prodName;
+    protected int prodUnit;
+    protected double prodCost;
+    protected String prodDesc;
+    protected String prodImgURL;
 
     //Constructor
     Product(){
@@ -30,8 +38,6 @@ public class Product {
         setProdImgURL(tmpProdImgURL);
     }
 
-
-    //Futures methods
 
     // Getters and setters
     public static int getNextProdID() {
@@ -80,5 +86,8 @@ public class Product {
     public void setProdImgURL(String proImgURL) {
         this.prodImgURL = proImgURL;
     }
+
+
+
 }
 
